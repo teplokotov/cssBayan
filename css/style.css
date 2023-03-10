@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
 .body {
-  min-width: 20em;
+  min-width: 15em;
   max-width: 55em;
   margin: 2.5em auto;
   font-family: 'Montserrat', sans-serif;
@@ -139,7 +139,7 @@
 }
 @media (max-width: 767px) {
   .heading {
-    font-size: 2.75em;
+    font-size: 2em;
   }
   .bayan-heading {
     font-size: 0.75em;
