@@ -52,6 +52,7 @@
   font-size: 1.75em;
   line-height: 2.5;
   color: #0059d9;
+  transition: color 0.2s linear;
 }
 
 .bayan-body {
@@ -59,6 +60,7 @@
   cursor: pointer;
   padding-bottom: 0;
   max-height: 0;
+  transition: max-height 0.3s linear;
   overflow: hidden;
 }
 
@@ -67,6 +69,9 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  opacity: 0;
+  scale: 0;
+  transition: opacity 0.2s, scale 0.3s linear;
 }
 
 .bayan-show {
@@ -74,4 +79,78 @@
   height: 1.25em;
   background-image: url(../assets/show_btn.svg);
   background-size: 2.5em 1.25em;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+.bayan-list:hover .bayan-heading {
+  color: #000000;
+}
+
+.bayan-list:hover .bayan-show{
+  opacity: 1;
+}
+
+.bayan-list-item:hover .bayan-body {
+  max-height: 31.25em;
+  padding-bottom: 1.5em;
+}
+
+.bayan-list-item:hover .bayan-show {
+  transform: rotate(45deg);
+}
+
+.bayan-list-item:hover .bayan-image {
+  opacity: 1;
+  scale: 1;
+}
+
+.bayan-list .bayan-input:checked + .bayan-label .bayan-heading {
+  color: #000000;
+}
+.bayan-list .bayan-input:checked + .bayan-label .bayan-body {
+  max-height: 31.25em;
+  padding-bottom: 1.5em;
+}
+.bayan-list .bayan-input:checked + .bayan-label .bayan-body .bayan-image {
+  opacity: 1;
+  scale: 1;
+}
+
+.bayan-list-item:active .bayan-image {
+  opacity: 0.5;
+}
+
+.bayan-list-item:active .bayan-heading {
+  color: #0059d9;
+}
+
+.bayan-list-item:active .bayan-input:not(:checked) + .bayan-label .bayan-show {
+  background-position-x: -1.25em;
+}
+
+@media (max-width: 1180px) {
+  .bayan-list .bayan-show{
+    opacity: 1;
+  }
+  .bayan-list .bayan-input:checked + .bayan-label .bayan-header .bayan-show {
+    transform: rotate(45deg);
+  }
+}
+@media (max-width: 767px) {
+  .heading {
+    font-size: 2.75em;
+  }
+  .bayan-heading {
+    font-size: 0.75em;
+  }
+  .bayan-show {
+    scale: 0.6;
+  }
+}
+
+@media (max-width: 672px) {
+  .bayan-list .bayan-input:checked + .bayan-label .bayan-body {
+    padding-bottom: 0;
+  }
 }
